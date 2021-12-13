@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <!-- script to inject angularjs online -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="ToDoList">
+        <div ng-controller="MainController">
+                <!-- the {{}} are known as handle bars which can read values inside the scope.. -->
+                <!-- the variable "list" is defined in the scope of the controller-->
+
+                <!-- conventional method of showing list items -->
+                <!-- <li>{{ list[0] }}</li>
+                <li>{{ list[1] }}</li>
+                <li>{{ list[2] }}</li> -->
+
+                <!-- modular way of using angular directives [in this case ng-repeat is a directive] -->
+                <div ng-repeat="item in list">
+                        <li>{{item}}</li>
+                </div>
+                <!-- addToDo is a variable which will store the value of the input , 
+                        This addToDo can again be accessed in the controller to perform functions-->
+                <input ng-model="addToDo">
+                <!-- addItem() is a function which will be defined in the controller -->
+                <button ng-click="addItem()">Add This To-do</button>
+        </div>
+        <!-- Modules -->
+        <script src=" js/app.js"></script>
+        <!-- Controllers -->
+        <script src="js/controllers/MainController.js"></script>
+</body>
+
+</html>
